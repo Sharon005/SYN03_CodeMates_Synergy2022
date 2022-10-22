@@ -1,11 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  MDBCard,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardBody,
+  MDBCardImage,
+  MDBRow,
+  MDBCol
+} from 'mdb-react-ui-kit';
 import Axios from 'axios';
 import './App.css';
 import Admin from './Admin.js';
 import Login from './Login';
 import Home from './Home';
 import User from './User';
+import Judge from './Judge';
 
 function App() {
   // const [eventName, setEventName] = useState('');
@@ -32,8 +42,10 @@ function App() {
     <div className='App'>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/admin' element={<Admin />} />
         <Route path='/user' element={<User />} />
+        <Route path='/judge' element={<Judge />} />
       </Routes>
       
     </div>

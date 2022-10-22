@@ -1,7 +1,8 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, Await } from "react-router-dom";
 import Admin from './Admin';
+import Header from './components/Header';
 import User from './User';
 
 function Login() {
@@ -17,11 +18,14 @@ function Login() {
       if (userName === 'admin' && password === 'admin') {
         navigate("/admin");
       }
+      else if(userName === 'judge' && password === 'judge') {
+        navigate("/judge");
+      }
       else if(userName === 'user' && password === 'user') {
         navigate("/user");
       }
       else {
-        navigate("/");
+        navigate("/login");
       }
 
     }, [userName, password]);
@@ -41,6 +45,7 @@ function Login() {
 
     return (
         <div>
+            <Header />
             <h1>Login</h1>
     
             <label>UserName:</label>
@@ -65,7 +70,7 @@ function Login() {
             
             <button onClick={addUser}>Login</button>
             
-            <h1>{userName}</h1>
+            {/* <h1>{userName}</h1> */}
       </div>
     );
 }

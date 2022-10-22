@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import './App.css';
 import Login from './Login';
+import Slider from './components/Slider'
+import Header from './components/Header';
+import Card from './Card';
+import './Home.css'
 
 function Home() {
     const [eventName, setEventName] = useState('');
@@ -29,7 +33,9 @@ function Home() {
   
     return (
       <div className="App">
-        <h1>Home</h1>
+        
+        <Header />
+        <Slider />
         {/* <h1>Event Management App{}</h1>
   
         <label>Event Name:</label>
@@ -53,18 +59,21 @@ function Home() {
   
         <button onClick={addToList}>Add To List</button> */}
   
-        <h1>Event List</h1>
-  
-        {eventList.map((val, key) => {
+        <h1>Events</h1>
+
+        <Card />
+
+        {/* {eventList.map((val, key) => {
           return (
-            <div className="row" key={key}>
-              <img src={val.src} width={190} height={250} alt='event'/>
-              <h1>{val.eventName}</h1>
-              <h1>No. Of Participants: {val.noOfParticipants}</h1>
+            <div className="card" key={key}>
+              <img src={val.src} alt='event' className='card_img'/>
+              <h1 className='card_title'>{val.eventName}</h1>
+              <h1 className="card_desc">No. Of Participants: {val.noOfParticipants}</h1>
             </div>
           );
-        })}
-        <Login />
+        })} */}
+
+        {/* <Login /> */}
       </div>
     );
   }
