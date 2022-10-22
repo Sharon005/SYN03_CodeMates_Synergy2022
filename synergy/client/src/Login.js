@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate, Await } from
 import Admin from './Admin';
 import Header from './components/Header';
 import User from './User';
+import './Login.css';
+import styled from "styled-components";
 
 function Login() {
     const [userName, setUserName] = useState('');
@@ -13,6 +15,7 @@ function Login() {
     const [userList, setUserList] = useState([]);
 
     const navigate = useNavigate();
+
 
     useEffect(() => {
       if (userName === 'admin' && password === 'admin') {
@@ -44,22 +47,29 @@ function Login() {
     };
 
     return (
-        <div>
+        <div className='login-container'>
             <Header />
-            <h1>Login</h1>
-    
-            <label>UserName:</label>
-            <input type="text" 
-            onChange={(event) => {
-            setUserName(event.target.value)
-            }}
-            />
-            <label>Password:</label>
-            <input type="password" 
-            onChange={(event) => { 
-            setPassword(event.target.value)
-            }}
-            />
+  
+            <div className='main-container'>
+              <h1>Login</h1>
+              <label>Username:</label>
+              <div className='input-container'>
+                <input type="text" className='login-input'
+                onChange={(event) => {
+                setUserName(event.target.value)
+                }}
+                />
+              </div>
+              
+              <label>Password:</label>
+              <input type="password" className='login-input'
+              onChange={(event) => { 
+              setPassword(event.target.value)
+              }}
+              />
+              <button className='login-button' onClick={addUser}>Login</button>
+            </div>
+            
             {/* <label>Role:</label>
 
             <input type="radio" id="user" name="role" value="User" />
@@ -68,7 +78,7 @@ function Login() {
             <label for="admin">Admin</label> */}
 
             
-            <button onClick={addUser}>Login</button>
+            
             
             {/* <h1>{userName}</h1> */}
       </div>

@@ -16,6 +16,9 @@ import Login from './Login';
 import Home from './Home';
 import User from './User';
 import Judge from './Judge';
+import List from './List';
+import LeaderBoard from './LeaderBoard';
+
 
 function App() {
   // const [eventName, setEventName] = useState('');
@@ -46,6 +49,8 @@ function App() {
         <Route path='/admin' element={<Admin />} />
         <Route path='/user' element={<User />} />
         <Route path='/judge' element={<Judge />} />
+        <Route path='/participants' element={<List />} />
+        <Route path='/leaderboard' element={<LeaderBoard />} />
       </Routes>
       
     </div>

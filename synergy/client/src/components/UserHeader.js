@@ -17,18 +17,12 @@ function Header() {
         <div className="header__nav">
           <div className="header__option">
             <span className="header__optionLineOne">Hello,</span>
-            <Link to='/login' style={{ textDecoration: 'none' }}>
-                <span className="header__optionLineTwo">Sign In</span>
-            </Link>
+            <span className="header__optionLineTwo">User</span>
+            
             
         </div>
 
-          <div className="header__optionBasket">
-            {/* <ShoppingBasketIcon /> */}
-            {/* <span className="header__optionLineTwo header__basketCount">
-              {basket?.length}
-            </span> */}
-          </div>
+        
       </div>
     </div>
   );

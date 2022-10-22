@@ -9,6 +9,10 @@ const eventSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    eventDesc: {
+        type: String,
+        required: true,
+    },
     src: {
         type: String,
         required: true,

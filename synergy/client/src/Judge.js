@@ -1,5 +1,6 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import JudgeCard from './JudgeCard';
 
 function Judge() {
     const [eventName, setEventName] = useState('');
@@ -29,36 +30,9 @@ function Judge() {
     return (
         <div>
         <h1>Event List</h1>
+
+        <JudgeCard />
     
-        {eventList.map((val, key) => {
-            return (
-            <div className="row" key={key}>
-                <img src={val.src} width={190} height={250} alt='event'/>
-                <h1>{val.eventName}</h1>
-                <h1>No. Of Participants: {val.noOfParticipants}</h1>
-                <label>UserName:</label>
-                <input type="text" 
-                onChange={(event) => {
-                    setEventName(val.eventName)
-                    setParticipantName(event.target.value)
-                    }}
-                />
-                <label>Roll No:</label>
-                <input type="text" 
-                onChange={(event) => {
-                    setParticipantRoll(event.target.value)
-                    }}
-                />
-                <label>Points:</label>
-                <input type="number" 
-                onChange={(event) => {
-                    setparticipantPoints(event.target.value)
-                    }}
-                />
-                <button onClick={insertpoints}>Insert Points</button>
-            </div>
-            );
-        })}
         </div>
   )
 }

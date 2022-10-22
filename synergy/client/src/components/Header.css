@@ -1,11 +1,20 @@
 .header {
-    height: 70px;
+    height: 80px;
     display: flex;
     align-items: center;
-    background-color: #131921;
+    background-color: #16003B;
     top: 0;
     z-index: 100;
+    font-family: 'Origin Tech Demo', sans-serif;
   }
+
+.header__logo {
+    width: 150px;
+    object-fit: contain;
+    margin: 0 20px;
+    margin-top: 18px;
+    margin-bottom: 5px;
+}
 
 .header__heading {
     color: white;
@@ -13,19 +22,13 @@
     text-decoration: none;
 }
   
-  .header__logo {
-    width: 100px;
-    object-fit: contain;
-    margin: 0 20px;
-    margin-top: 18px;
-  }
-  
-  
   .header__optionLineOne {
-    font-size: 15px;
+    color: #EA448F;
+    font-size: 17px;
   }
   
   .header__optionLineTwo {
+    color: white;
     font-size: 18px;
     font-weight: 800;
   }
@@ -38,7 +41,7 @@
   .header__option {
     display: flex;
     flex-direction: column;
-    margin-left: 1130px;
+    margin-left: 1210px;
     color: white;
   }
   

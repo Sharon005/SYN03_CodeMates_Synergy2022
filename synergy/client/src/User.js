@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import './App.css';
+import UserHeader from './components/UserHeader';
+import Card from './Card';
+import UserCard from './UserCard';
 
 function User() {
     const [eventName, setEventName] = useState('');
@@ -25,35 +28,15 @@ function User() {
         participantRoll: participantRoll,
       });
     };
-  return (
-    <div>
-      <h1>Event List</h1>
-  
-      {eventList.map((val, key) => {
-        return (
-          <div className="row" key={key}>
-            <img src={val.src} width={190} height={250} alt='event'/>
-            <h1>{val.eventName}</h1>
-            <h1>No. Of Participants: {val.noOfParticipants}</h1>
-            <label>UserName:</label>
-              <input type="text" 
-              onChange={(event) => {
-                setEventName(val.eventName)
-                setParticipantName(event.target.value)
-                }}
-              />
-              <label>Roll No:</label>
-              <input type="text" 
-              onChange={(event) => {
-                setParticipantRoll(event.target.value)
-                }}
-              />
-            <button onClick={register}>Register</button>
-          </div>
-        );
-      })}
-    </div>
-  )
+    return (
+      <div>
+        <UserHeader />
+        <h1>Events</h1>
+
+        <UserCard />
+
+      </div>
+    )
 }
 
 export default User;

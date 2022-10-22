@@ -8,6 +8,7 @@ import Seventh from "../assets/7.jpg";
 import Eight from "../assets/8.jpg";
 import Ninth from "../assets/9.jpg";
 import Tenth from "../assets/10.jpg";
+import black from "../assets/black.png"
 
 export default [
   {
@@ -28,13 +29,13 @@ export default [
   {
     // title: "Fourth Slide",
     // description: "This is the Fourth slider Image of our carousel",
+    urls: black,
+  },
+  {
+    // title: "Fifth Slide",
+    // description: "This is the Fifth slider Image of our carousel",
     urls: Fourth,
   },
-  // {
-  //   // title: "Fifth Slide",
-  //   // description: "This is the Fifth slider Image of our carousel",
-  //   urls: Fifth,
-  // },
   // {
   //   // title: "Sixth Slide",
   //   // description: "This is the Sixth slider Image of our carousel",

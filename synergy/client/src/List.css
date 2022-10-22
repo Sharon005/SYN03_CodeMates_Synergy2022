@@ -1,0 +1,20 @@
+.list-container {
+    height: 100vh;
+}
+.list-cards {
+    align-items: center;
+    justify-content: center;
+}
+
+.list-details {
+    height: 100px;
+}
+
+.white {
+    color: white;
+    padding-right: 100px;
+}
+
+#space {
+    font-size: 30px;
+}

@@ -36,6 +36,11 @@ function Home() {
         
         <Header />
         <Slider />
+
+        <h1>Events</h1>
+
+        <Card />
+
         {/* <h1>Event Management App{}</h1>
   
         <label>Event Name:</label>
@@ -58,10 +63,6 @@ function Home() {
         />
   
         <button onClick={addToList}>Add To List</button> */}
-  
-        <h1>Events</h1>
-
-        <Card />
 
         {/* {eventList.map((val, key) => {
           return (
