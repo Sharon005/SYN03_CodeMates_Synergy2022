@@ -1,6 +1,6 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
 import Admin from './Admin';
 import User from './User';
 
@@ -8,6 +8,29 @@ function Login() {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     // const [role, setRole] = useState('');
+
+    const [userList, setUserList] = useState([]);
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+      if (userName === 'admin' && password === 'admin') {
+        navigate("/admin");
+      }
+      else if(userName === 'user' && password === 'user') {
+        navigate("/user");
+      }
+      else {
+        navigate("/");
+      }
+
+    }, [userName, password]);
+
+    useEffect(() => {
+      Axios.get("http://localhost:3001/readuser").then((response) => {
+        setUserList(response.data);
+      })
+    }, [])
   
     const addUser = () => {
       Axios.post("http://localhost:3001/insertuser", {
@@ -38,8 +61,11 @@ function Login() {
             <label for="user">User</label>
             <input type="radio" id="admin" name="role" value="Admin" />
             <label for="admin">Admin</label> */}
-    
+
+            
             <button onClick={addUser}>Login</button>
+            
+            <h1>{userName}</h1>
       </div>
     );
 }

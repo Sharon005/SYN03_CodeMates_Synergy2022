@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import './App.css';
+import Login from './Login';
 
 function Home() {
     const [eventName, setEventName] = useState('');
     const [participants, setParticipants] = useState(0);
     const [src, setSrc] = useState('');
+
+    const [participantName, setParticipantName] = useState('');
+    const [participantRoll, setParticipantRoll] = useState('');
   
     const [eventList, setEventList] = useState([]);
   
@@ -25,7 +29,8 @@ function Home() {
   
     return (
       <div className="App">
-        <h1>Event Management App</h1>
+        <h1>Home</h1>
+        {/* <h1>Event Management App{}</h1>
   
         <label>Event Name:</label>
         <input type="text" 
@@ -46,7 +51,7 @@ function Home() {
           }}
         />
   
-        <button onClick={addToList}>Add To List</button>
+        <button onClick={addToList}>Add To List</button> */}
   
         <h1>Event List</h1>
   
@@ -59,6 +64,7 @@ function Home() {
             </div>
           );
         })}
+        <Login />
       </div>
     );
   }

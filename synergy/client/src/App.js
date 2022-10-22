@@ -5,6 +5,7 @@ import './App.css';
 import Admin from './Admin.js';
 import Login from './Login';
 import Home from './Home';
+import User from './User';
 
 function App() {
   // const [eventName, setEventName] = useState('');
@@ -29,18 +30,16 @@ function App() {
 
   return (
     <div className='App'>
-      <button>Login</button>
-      <Home />
-      <Login />
-    </div>
-    // <div className="App">
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/admin' element={<Admin />} />
+        <Route path='/user' element={<User />} />
+      </Routes>
       
-    //   <button>Login</button>
-    //   <Login />
-
-    //   <Admin />
+    </div>
     
-    //   {/* <h1>Event Management App</h1>
+    
+    //{/* <h1>Event Management App</h1>
 
     //   <label>Event Name:</label>
     //   <input type="text" 
@@ -74,7 +73,7 @@ function App() {
     //       </div>
     //     );
     //   })} */}
-    // </div>
+    //{/* // </div> */}
   );
 }
 

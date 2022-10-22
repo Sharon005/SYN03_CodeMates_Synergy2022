@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Link } from 'react-router-dom';
+import Admin from './Admin';
 import App from './App';
-import { LoginContext, StateProvider } from './context/LoginContext';
+import User from './User';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <StateProvider initialState={initialState} reducer={reducer}>
-            <App />
-        </StateProvider>
-    </React.StrictMode>,
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
 );
